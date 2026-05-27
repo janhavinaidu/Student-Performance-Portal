@@ -93,3 +93,10 @@ code {
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
+
+/* Custom dropdown list option styling to resolve browser-dependent white backgrounds in dark mode */
+select option {
+  background-color: #0e172a;
+  color: var(--text-primary);
+}
+

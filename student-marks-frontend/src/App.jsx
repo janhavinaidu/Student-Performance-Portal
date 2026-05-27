@@ -46,8 +46,9 @@ function mapApiToUi(student) {
 }
 
 function mapUiToApi(formData) {
-  // Save the Roll Number transparently inside the studentName backend attribute
-  const formattedName = `${formData.name.trim()} (Roll: ${formData.rollNumber.trim()})`;
+  // Save the Roll Number transparently inside the studentName backend attribute only if it's provided
+  const roll = formData.rollNumber?.trim();
+  const formattedName = roll ? `${formData.name.trim()} (Roll: ${roll})` : formData.name.trim();
   return {
     studentName: formattedName,
     subjectName: formData.subject,

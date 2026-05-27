@@ -87,10 +87,6 @@ const StudentForm = ({ onSubmit, editStudent, onCancelEdit, existingStudents }) 
       newErrors.name = 'Name must be at least 3 characters.';
     }
 
-    if (!formData.rollNumber.trim()) {
-      newErrors.rollNumber = 'Roll Number is required.';
-    }
-
     if (formData.marks === '') {
       newErrors.marks = 'Marks are required.';
     } else {
@@ -143,7 +139,7 @@ const StudentForm = ({ onSubmit, editStudent, onCancelEdit, existingStudents }) 
 
       <form onSubmit={handleSubmit} className="student-form" noValidate>
         <div className="input-group">
-          <label htmlFor="rollNumber">Roll Number / ID</label>
+          <label htmlFor="rollNumber">Roll Number / ID (Optional)</label>
           <input
             type="text"
             id="rollNumber"
